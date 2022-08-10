@@ -27,12 +27,11 @@ def system32():
 
 
 def ex_1():
-    f = open("dumpyfile_1.txt", "a")
-    f.truncate(0)
-    f.write(runHistory())
-    f.write(ipAndMacAddress())
-    f.write(system32())
-    f.close()
+    with open("dumpyfile_1.txt", "a") as f:
+        f.truncate(0)
+        f.write(runHistory())
+        f.write(ipAndMacAddress())
+        f.write(system32())
 
 
 def ex_2(sleep_time: int):
