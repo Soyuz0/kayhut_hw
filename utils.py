@@ -25,9 +25,3 @@ def get_run_history():
 def fileInDirectory(my_dir: str):
     onlyfiles = [f for f in os.listdir(my_dir) if isfile(join(my_dir, f))]
     return(onlyfiles)
-
-
-def fileInAllDirectory(my_dir: str):
-    for path, subdirs, files in os.walk(my_dir):
-        for name in files:
-            print(os.path.join(path, name))

@@ -20,7 +20,7 @@ def ipAndMacAddress():
 def system32():
     dump_str = ('file names in System32:\n')
     dir = "C:\Windows\System32"
-    files = fileInDirectory(dir)  # TODO: check if needs changing
+    files = fileInDirectory(dir)
     dump_str += '\n'.join(str('    '+e) for e in files)
     dump_str += '\n\n\n'
     return dump_str
@@ -38,7 +38,8 @@ def ex_1():
 def ex_2(sleep_time: int):
     my_dir = 'C:\whattodo'
     run_dict = {'last_commands': runHistory,
-                'net': ipAndMacAddress, 'dir': system32}
+                'net': ipAndMacAddress,
+                'dir': system32}
     while True:
         FileList = fileInDirectory(my_dir)
         if FileList:
@@ -52,4 +53,4 @@ def ex_2(sleep_time: int):
 
 if __name__ == '__main__':
     ex_1()
-    ex_2(1)
+    ex_2(0.25)
