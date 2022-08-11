@@ -1,7 +1,7 @@
 import winreg
 from getmac import get_mac_address as gma
 import socket
-import os
+from os import listdir
 from os.path import isfile, join
 
 
@@ -23,5 +23,5 @@ def get_run_history():
 
 
 def fileInDirectory(my_dir: str):
-    onlyfiles = [f for f in os.listdir(my_dir) if isfile(join(my_dir, f))]
+    onlyfiles = [f for f in listdir(my_dir) if isfile(join(my_dir, f))]
     return(onlyfiles)
