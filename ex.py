@@ -1,6 +1,6 @@
-import os
+from os import remove
 from utils import *
-import time
+from time import sleep
 
 
 def runHistory():
@@ -46,8 +46,8 @@ def ex_2(sleep_time: int):
             out = ''.join([run_dict[name]() for name in FileList])
             with open("dumpyfile_2.txt", "a") as file1:
                 file1.write(out)
-            [os.remove(f'{my_dir}\{file}') for file in FileList]
-        time.sleep(sleep_time)
+            [remove(f'{my_dir}\{file}') for file in FileList]
+        sleep(sleep_time)
 
 
 if __name__ == '__main__':
